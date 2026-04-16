@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We Speak Computer - Print Flyer</title>
+  <style>
+    :root {
+      --navy: #071322;
+      --brand: #33d3ff;
+      --brand-2: #8d6bff;
+      --muted: #3b4b63;
+    }
+
+    /* Print-specific settings to guarantee 8.5x11 and no background colors printing by default unless forced */
+    @page {
+      size: letter portrait;
+      margin: 0.75in;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--navy);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        min-height: auto;
+        justify-content: flex-start;
+      }
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.2rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0 0 14px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0099cc, #6633cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: #6633cc; /* Fallback for printers that don't support gradient text */
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .subhead {
+      font-size: 1.4rem;
+      color: var(--muted);
+      max-width: 80%;
+      margin: 0 auto 38px;
+      line-height: 1.4;
+    }
+
+    .bullets {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 42px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      color: #0099cc;
+      font-size: 1.5rem;
+    }
+
+    .mid-banner {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 42px;
+      padding: 18px 20px;
+      border-top: 2px solid #eee;
+      border-bottom: 2px solid #eee;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 28px;
+      max-width: 80%;
+      margin: 0 auto 52px;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .services li {
+      position: relative;
+      padding: 10px 0 10px 1.15em;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .services li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: #0099cc;
+      font-size: 1.2em;
+      line-height: 1;
+    }
+
+    .contact-bar {
+      margin-top: auto;
+      padding-top: 34px;
+    }
+
+    .contact-info {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .contact-info span {
+      margin: 0 15px;
+    }
+
+    .footer {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-area">
+    <div class="logo-mark">WSC</div>
+    <div class="logo-text">We Speak Computer</div>
+  </div>
+
+  <h1>
+    We speak computer<br />
+    <span class="gradient-text">so you don't have to</span>
+  </h1>
+
+  <p class="subhead">
+    Friendly remote & on-site IT support for homes & small businesses — Loma Linda, CA
+  </p>
+
+  <div class="bullets">
+    <div class="bullet-item"><span class="dot">•</span> Timely response</div>
+    <div class="bullet-item"><span class="dot">•</span> Local + Remote</div>
+    <div class="bullet-item"><span class="dot">•</span> Windows, macOS & Mobile</div>
+  </div>
+
+  <div class="mid-banner">
+    Half the price. Same serious support.
+  </div>
+
+  <ul class="services">
+    <li>PC Repair & Tune-Ups</li>
+    <li>Small Business IT</li>
+    <li>Wi-Fi & Network Fixes</li>
+    <li>New Device Setup</li>
+    <li>Virus Removal</li>
+    <li>Security & Backups</li>
+  </ul>
+
+  <div class="contact-bar">
+    <div class="contact-info">
+      Joshua at (909) 674-4410 <span>|</span> wespeakcomputersupport@gmail.com <span>|</span> wespeakcomputer.net
+    </div>
+    <div class="footer">
+      Clear answers. Fast fixes. Real support.
+    </div>
+  </div>
+</body>
+</html>

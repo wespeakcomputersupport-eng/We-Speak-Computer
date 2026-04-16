@@ -213,6 +213,65 @@
       margin-top: 6px;
     }
 
+    .status-detail {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    #about .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      width: min(62ch, 100%);
+      margin: 0 auto;
+    }
+
+    .profile-photo-wrap {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .profile-photo {
+      display: block;
+      width: auto;
+      max-width: min(320px, 100%);
+      height: auto;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      object-fit: contain;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .about-bio {
+      width: 100%;
+      text-align: center;
+    }
+
+    #about .section-title {
+      width: min(62ch, 100%);
+      text-align: center;
+    }
+
+    #about .lead {
+      max-width: none;
+      margin: 0;
+    }
+
     section {
       padding: 34px 0;
     }
@@ -356,13 +415,14 @@
         <aside class="hero-card" aria-label="Service highlights">
           <h2 style="margin: 0 0 8px;">Support Highlights</h2>
           <p style="margin: 0; color: var(--muted); line-height: 1.5;">
-            Tier-3 troubleshooting backed by 6+ years of advanced endpoint support and 20 years of
+            Tier-3 troubleshooting backed by 7 years of advanced endpoint support and 20 years of
             customer service.
           </p>
           <div class="status-row">
             <div class="status">
               Response
-              <strong>Same-Day</strong>
+              <strong>Quick Response</strong>
+              <span class="status-detail">9 am–5 pm daily</span>
             </div>
             <div class="status">
               Service Area
@@ -428,10 +488,25 @@
     <section id="about">
       <div class="container">
         <h2 class="section-title">Built by a Senior IT Specialist</h2>
-        <p class="lead">
-          Hi, I am Joshua Perez. I have led endpoint and infrastructure projects for organizations with up to 165 users
-          across multiple offices. I specialize in translating technical problems into clear solutions, then fixing them fast.
-        </p>
+        <div class="about-layout">
+          <figure class="profile-photo-wrap">
+            <img
+              class="profile-photo"
+              src="images/joshua-perez.png"
+              alt="Joshua Perez, We Speak Computer"
+              width="640"
+              loading="lazy"
+            />
+          </figure>
+          <div class="about-bio">
+            <p class="lead">
+              Hi, I am Joshua Perez. I am CompTIA A+ certified with 7 years of IT experience, based in Loma Linda. I provide
+              remote and in-person support for homes and small businesses. I have led endpoint and infrastructure projects
+              for organizations with up to 165 users across multiple offices. I specialize in translating technical
+              problems into clear solutions, then fixing them fast.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -442,10 +517,8 @@
           <span class="chip">Windows 10/11</span>
           <span class="chip">macOS</span>
           <span class="chip">Linux</span>
-          <span class="chip">Microsoft Intune</span>
           <span class="chip">Active Directory</span>
           <span class="chip">Microsoft 365</span>
-          <span class="chip">SCCM + Jamf Pro</span>
           <span class="chip">DNS / DHCP</span>
           <span class="chip">TCP/IP + VPN</span>
           <span class="chip">PowerShell</span>
